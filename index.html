@@ -31,354 +31,301 @@
   </head>
   <body>
     <div id="container">
-      <div id="title-block">
-        <a href="https://toyokeizai.net/" target="_blank"><img id="img-logo" src="img/logo-tko-white.png" /></a>
-        <h1><span>新型コロナウイルス</span><span>国内感染の状況</span></h1>
-        <p>日本国内において現在確定している新型コロナウイルス感染症（COVID-19）の状況を厚生労働省の報道発表資料からビジュアル化した。</p>
-        <p>制作：<a href="https://toyokeizai.net/list/author/%E8%8D%BB%E5%8E%9F+%E5%92%8C%E6%A8%B9" target="_blank">荻原 和樹</a>（東洋経済オンライン編集部）</p>
-        <p class="updated-last"><br /></p>
-        <div class="alert">
-          <h4>お知らせ</h4>
-          <p>都道府県のデータを拡充しました。<a href="#index-each-prefecture">ページ下部</a>から都道府県を選んで詳細データの表示ができます。</p>
-        </div>
-        <p><a href="en.html">ENGLISH</a></p>
-      </div>
       <div id="main-block">
-        <h2>全国の状況</h2>
-        <div class="flex-container">
-          <div class="flex-row">
-            <div class="box transition" code="carriers">
-              <h3>感染者数</h3>
-              <div class="latest">
-                <div>
-                  <span class="type"></span>
-                  <span class="value"></span>
-                  <span class="unit"></span>
-                </div>
-                <div class="change"></div>
-              </div>
-              <h5 class="updated-transition"><br /></h5>
-              <div class="switches">
-                <div class="switch selected" value="new">新規</div>
-                <div class="switch" value="total">累計</div>
-              </div>
-              <div class="chart"></div>
-              <p class="notes">厚生労働省の資料「PCR検査陽性者数＞PCR検査陽性者」の数。感染はしているが症状がないケース（＝無症状病原体保有者）や症状の確認中も含む。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
-            </div>
-          </div>
-          <div class="flex-row">
-            <div class="box transition" code="cases">
-              <h3>患者数</h3>
-              <div class="latest">
-                <div>
-                  <span class="type"></span>
-                  <span class="value"></span>
-                  <span class="unit"></span>
-                </div>
-                <div class="change"></div>
-              </div>
-              <h5 class="updated-transition"><br /></h5>
-              <div class="switches">
-                <div class="switch selected" value="new">新規</div>
-                <div class="switch" value="total">累計</div>
-              </div>
-              <div class="chart"></div>
-              <p class="notes">厚生労働省の資料「PCR検査陽性時の有症状・無症状の別＞有症状者」の数。感染者数から無症状病原体保有者と症状有無確認中の数字を引いた値。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
-            </div>
-          </div>
-          <div class="flex-row">
-            <div class="box transition" code="discharged">
-              <h3>退院者数</h3>
-              <div class="latest">
-                <div>
-                  <span class="type"></span>
-                  <span class="value"></span>
-                  <span class="unit"></span>
-                </div>
-                <div class="change"></div>
-              </div>
-              <h5 class="updated-transition"><br /></h5>
-              <div class="switches">
-                <div class="switch selected" value="new">新規</div>
-                <div class="switch" value="total">累計</div>
-              </div>
-              <div class="chart"></div>
-              <p class="notes">厚生労働省の資料「入退院等の状況＞退院した者」の数。症状の有無は問わない。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
-            </div>
-          </div>
-          <div class="flex-row">
-            <div class="box transition" code="pcrtested">
-              <h3>PCR検査人数</h3>
-              <div class="latest">
-                <div>
-                  <span class="type"></span>
-                  <span class="value"></span>
-                  <span class="unit"></span>
-                </div>
-                <div class="change"></div>
-              </div>
-              <h5 class="updated-transition"><br /></h5>
-              <div class="switches">
-                <div class="switch selected" value="new">新規</div>
-                <div class="switch" value="total">累計</div>
-              </div>
-              <div class="chart"></div>
-              <p class="notes">厚生労働省の資料「PCR検査陽性者数＞PCR検査実施人数」の数。検査「件数」ではなく「人数」であるため、1名に複数回PCR検査を行った場合は「1名」とカウントする。厚生労働省では原則として過去分の遡及訂正は行っていないため、都道府県からの報告に訂正があった場合は大幅な増加やマイナスになる場合がある。当初はPCR検査人数として疑似症サーベイランス（疑わしい症状がある患者への調査）だけの数字が発表されていたが、3月4日からは濃厚接触者に対する検査も含むため、このページでは3月4日以降のデータのみ掲載している。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
-            </div>
-          </div>
-          <div class="flex-row">
-            <div class="box transition" code="serious">
-              <h3>重症者数</h3>
-              <div class="latest">
-                <div>
-                  <span class="type"></span>
-                  <span class="value"></span>
-                  <span class="unit"></span>
-                </div>
-                <div class="change"></div>
-              </div>
-              <h5 class="updated-transition"><br /></h5>
-              <div class="switches">
-                <div class="switch selected" value="new">新規</div>
-                <div class="switch" value="total">累計</div>
-              </div>
-              <div class="chart"></div>
-                <p class="notes">厚生労働省の資料「入退院等の状況＞入院治療を要する者＞うち人工呼吸器又は集中治療室に入院している者」の数。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
-            </div>
-          </div>
-          <div class="flex-row">
-            <div class="box transition" code="deaths">
-              <h3>死亡者数</h3>
-              <div class="latest">
-                <div>
-                  <span class="type"></span>
-                  <span class="value"></span>
-                  <span class="unit"></span>
-                </div>
-                <div class="change"></div>
-              </div>
-              <h5 class="updated-transition"><br /></h5>
-              <div class="switches">
-                <div class="switch selected" value="new">新規</div>
-                <div class="switch" value="total">累計</div>
-              </div>
-              <div class="chart"></div>
-              <p class="notes">厚生労働省の資料「入退院等の状況＞死亡者」の数。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
-            </div>
-          </div>
-          <div class="flex-row">
-            <div class="box" id="demography-box">
-              <h3>年齢別の感染者数</h3>
-              <h5 class="updated-demography"><br /></h5>
-              <div id="demography-chart"></div>
-              <p class="notes">「不明」には調査中や非公表も含む。厚生労働省の発表するデータ時点が異なるため、他のデータと合計数などが一致しない場合がありうる。</p>
-            </div>
-          </div>
-        </div>
+          <p class="notes">データソース：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html" target="_blank">厚生労働省の報道発表資料</a></p>
+          <p class="notes">Original Site：<a href="https://github.com/kaz-ogiwara/covid19/" target="_blank">TOYO KEIZAI ONLINE</a> © 2020 Toyo Keizai Inc. (MIT license)</p>
 
-        <div class="flex-container">
-          <div class="flex-row">
-            <h2>都道府県別</h2>
-            <select id="select-pref-type">
-              <option value="carriers">感染者数</option>
-              <option value="discharged">退院者数</option>
-              <option value="deaths">死亡者数</option>
-              <option value="pcrtested">PCR検査人数</option>
-            </select>
-            <div class="box" id="region-box">
-              <div id="japan-map"></div>
-              <div id="region-chart"></div>
-            </div>
+          <div class="flex-container">
+              <div class="flex-row">
+                  <!-- <h2>都道府県別</h2> -->
+                  <select id="select-pref-type">
+                      <option value="carriers">感染者数</option>
+                      <option value="deaths">死亡者数</option>
+                      <option value="pcrtested">PCR検査人数</option>
+                      <option value="discharged">退院者数</option>
+                  </select>
+                  <div class="box" id="region-box">
+                      <div id="japan-map"></div>
+                      <div id="region-chart"></div>
+                  </div>
+              </div>
+              <div class="flex-row t02">
+                  <!-- <h2 id="index-each-prefecture">各都道府県の状況</h2> -->
+                  <select id="select-prefecture">
+                      <option value="1">北海道</option>
+                      <option value="2">青森県</option>
+                      <option value="3">岩手県</option>
+                      <option value="4">宮城県</option>
+                      <option value="5">秋田県</option>
+                      <option value="6">山形県</option>
+                      <option value="7">福島県</option>
+                      <option value="8">茨城県</option>
+                      <option value="9">栃木県</option>
+                      <option value="10">群馬県</option>
+                      <option value="11">埼玉県</option>
+                      <option value="12">千葉県</option>
+                      <option value="13">東京都</option>
+                      <option value="14">神奈川県</option>
+                      <option value="15">新潟県</option>
+                      <option value="16">富山県</option>
+                      <option value="17">石川県</option>
+                      <option value="18">福井県</option>
+                      <option value="19">山梨県</option>
+                      <option value="20">長野県</option>
+                      <option value="21">岐阜県</option>
+                      <option value="22">静岡県</option>
+                      <option value="23">愛知県</option>
+                      <option value="24">三重県</option>
+                      <option value="25">滋賀県</option>
+                      <option value="26">京都府</option>
+                      <option value="27">大阪府</option>
+                      <option value="28">兵庫県</option>
+                      <option value="29">奈良県</option>
+                      <option value="30">和歌山県</option>
+                      <option value="31">鳥取県</option>
+                      <option value="32">島根県</option>
+                      <option value="33">岡山県</option>
+                      <option value="34">広島県</option>
+                      <option value="35">山口県</option>
+                      <option value="36">徳島県</option>
+                      <option value="37">香川県</option>
+                      <option value="38">愛媛県</option>
+                      <option value="39">高知県</option>
+                      <option value="40">福岡県</option>
+                      <option value="41">佐賀県</option>
+                      <option value="42">長崎県</option>
+                      <option value="43">熊本県</option>
+                      <option value="44">大分県</option>
+                      <option value="45">宮崎県</option>
+                      <option value="46">鹿児島県</option>
+                      <option value="47">沖縄県</option>
+                  </select>
+                  <div class="flex-container">
+
+                      <div class="flex-row t03">
+                          <div class="box prefecture-chart" code="carriers">
+                              <h3><span></span>の感染者数</h3>
+                              <div class="latest">
+                                  <div>
+                                      <span class="type"></span>
+                                      <span class="value"></span>
+                                      <span class="unit"></span>
+                                  </div>
+                                  <div class="change"></div>
+                              </div>
+                              <h5 class="updated-transition"><br /></h5>
+                              <div class="switches">
+                                  <div class="switch selected" value="new">新規</div>
+                                  <div class="switch" value="total">累計</div>
+                              </div>
+                              <div class="chart"></div>
+                              <p class="notes">感染はしているが症状がないケース（＝無症状病原体保有者）や症状の確認中も含む。日付は都道府県から厚生労働省への報告ベース。後から誤記を訂正したと思われるケースは遡及修正した（3/14の埼玉県、3/25の青森県）。<a class="more">もっと読む</a></p>
+                          </div>
+                      </div>
+
+                      <div class="flex-row t03">
+                          <div class="box prefecture-chart" code="deaths">
+                              <h3><span></span>の死亡者数</h3>
+                              <div class="latest">
+                                  <div>
+                                      <span class="type"></span>
+                                      <span class="value"></span>
+                                      <span class="unit"></span>
+                                  </div>
+                                  <div class="change"></div>
+                              </div>
+                              <h5 class="updated-transition"><br /></h5>
+                              <div class="switches">
+                                  <div class="switch selected" value="new">新規</div>
+                                  <div class="switch" value="total">累計</div>
+                              </div>
+                              <div class="chart"></div>
+                              <p class="notes">日付は都道府県から厚生労働省への報告ベース。後から誤記を訂正したと思われるケースは遡及修正した（3/18-19の北海道、3/22-26の兵庫県、3/26の愛知県）。<a class="more">もっと読む</a></p>
+                          </div>
+                      </div>
+
+                      <div class="flex-row t03">
+                          <div class="box prefecture-chart" code="pcrtested">
+                              <h3><span></span>のPCR検査人数</h3>
+                              <div class="latest">
+                                  <div>
+                                      <span class="type"></span>
+                                      <span class="value"></span>
+                                      <span class="unit"></span>
+                                  </div>
+                                  <div class="change"></div>
+                              </div>
+                              <h5 class="updated-transition"><br /></h5>
+                              <div class="switches">
+                                  <div class="switch selected" value="new">新規</div>
+                                  <div class="switch" value="total">累計</div>
+                              </div>
+                              <div class="chart"></div>
+                              <p class="notes">検査「件数」ではなく「人数」であるため、1名に複数回PCR検査を行った場合は「1名」とカウントする。厚生労働省では原則として過去分の遡及訂正は行っていないため、都道府県からの報告に訂正があった場合は大幅な増加やマイナスになる場合がある。未確定または未集計などでその日の数値が確定できない場合、前日と同じ数値としている。3/11の秋田県は秋田市のみの数値。3/16-22の愛知県は名古屋市を除く。千葉県は3/21、大阪府は3/22、神奈川県は3/23からのみ計上。それ以前はPCR検査「件数」だったことが判明したため0と扱っている。<a class="more">もっと読む</a></p>
+                          </div>
+                      </div>
+
+                      <div class="flex-row t03">
+                          <div class="box prefecture-chart" code="discharged">
+                              <h3><span></span>の退院者数</h3>
+                              <div class="latest">
+                                  <div>
+                                      <span class="type"></span>
+                                      <span class="value"></span>
+                                      <span class="unit"></span>
+                                  </div>
+                                  <div class="change"></div>
+                              </div>
+                              <h5 class="updated-transition"><br /></h5>
+                              <div class="switches">
+                                  <div class="switch selected" value="new">新規</div>
+                                  <div class="switch" value="total">累計</div>
+                              </div>
+                              <div class="chart"></div>
+                              <p class="notes">症状の有無は問わない。日付は都道府県から厚生労働省への報告ベース。後から誤記を訂正したと思われるケースは遡及修正した（3/18-19の栃木県）。<a class="more">もっと読む</a></p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
           </div>
-          <div class="flex-row t02">
-            <h2 id="index-each-prefecture">各都道府県の状況</h2>
-            <select id="select-prefecture">
-              <option value="1">北海道</option>
-              <option value="2">青森県</option>
-              <option value="3">岩手県</option>
-              <option value="4">宮城県</option>
-              <option value="5">秋田県</option>
-              <option value="6">山形県</option>
-              <option value="7">福島県</option>
-              <option value="8">茨城県</option>
-              <option value="9">栃木県</option>
-              <option value="10">群馬県</option>
-              <option value="11">埼玉県</option>
-              <option value="12">千葉県</option>
-              <option value="13">東京都</option>
-              <option value="14">神奈川県</option>
-              <option value="15">新潟県</option>
-              <option value="16">富山県</option>
-              <option value="17">石川県</option>
-              <option value="18">福井県</option>
-              <option value="19">山梨県</option>
-              <option value="20">長野県</option>
-              <option value="21">岐阜県</option>
-              <option value="22">静岡県</option>
-              <option value="23">愛知県</option>
-              <option value="24">三重県</option>
-              <option value="25">滋賀県</option>
-              <option value="26">京都府</option>
-              <option value="27">大阪府</option>
-              <option value="28">兵庫県</option>
-              <option value="29">奈良県</option>
-              <option value="30">和歌山県</option>
-              <option value="31">鳥取県</option>
-              <option value="32">島根県</option>
-              <option value="33">岡山県</option>
-              <option value="34">広島県</option>
-              <option value="35">山口県</option>
-              <option value="36">徳島県</option>
-              <option value="37">香川県</option>
-              <option value="38">愛媛県</option>
-              <option value="39">高知県</option>
-              <option value="40">福岡県</option>
-              <option value="41">佐賀県</option>
-              <option value="42">長崎県</option>
-              <option value="43">熊本県</option>
-              <option value="44">大分県</option>
-              <option value="45">宮崎県</option>
-              <option value="46">鹿児島県</option>
-              <option value="47">沖縄県</option>
-            </select>
-            <div class="flex-container">
-              <div class="flex-row t03">
-                <div class="box prefecture-chart" code="carriers">
-                  <h3><span></span>の感染者数</h3>
-                  <div class="latest">
-                    <div>
-                      <span class="type"></span>
-                      <span class="value"></span>
-                      <span class="unit"></span>
-                    </div>
-                    <div class="change"></div>
+
+          <h2>全国の状況</h2>
+          <div class="flex-container">
+              <div class="flex-row">
+                  <div class="box transition" code="carriers">
+                      <h3>感染者数</h3>
+                      <div class="latest">
+                          <div>
+                              <span class="type"></span>
+                              <span class="value"></span>
+                              <span class="unit"></span>
+                          </div>
+                          <div class="change"></div>
+                      </div>
+                      <h5 class="updated-transition"><br /></h5>
+                      <div class="switches">
+                          <div class="switch selected" value="new">新規</div>
+                          <div class="switch" value="total">累計</div>
+                      </div>
+                      <div class="chart"></div>
+                      <p class="notes">厚生労働省の資料「PCR検査陽性者数＞PCR検査陽性者」の数。感染はしているが症状がないケース（＝無症状病原体保有者）や症状の確認中も含む。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
                   </div>
-                  <h5 class="updated-transition"><br /></h5>
-                  <div class="switches">
-                    <div class="switch" value="new">新規</div>
-                    <div class="switch selected" value="total">累計</div>
-                  </div>
-                  <div class="chart"></div>
-                  <p class="notes">感染はしているが症状がないケース（＝無症状病原体保有者）や症状の確認中も含む。日付は都道府県から厚生労働省への報告ベース。後から誤記を訂正したと思われるケースは遡及修正した（3/14の埼玉県、3/25の青森県）。<a class="more">もっと読む</a></p>
-                </div>
               </div>
-              <div class="flex-row t03">
-                <div class="box prefecture-chart" code="discharged">
-                  <h3><span></span>の退院者数</h3>
-                  <div class="latest">
-                    <div>
-                      <span class="type"></span>
-                      <span class="value"></span>
-                      <span class="unit"></span>
-                    </div>
-                    <div class="change"></div>
+              <div class="flex-row">
+                  <div class="box transition" code="cases">
+                      <h3>患者数</h3>
+                      <div class="latest">
+                          <div>
+                              <span class="type"></span>
+                              <span class="value"></span>
+                              <span class="unit"></span>
+                          </div>
+                          <div class="change"></div>
+                      </div>
+                      <h5 class="updated-transition"><br /></h5>
+                      <div class="switches">
+                          <div class="switch selected" value="new">新規</div>
+                          <div class="switch" value="total">累計</div>
+                      </div>
+                      <div class="chart"></div>
+                      <p class="notes">厚生労働省の資料「PCR検査陽性時の有症状・無症状の別＞有症状者」の数。感染者数から無症状病原体保有者と症状有無確認中の数字を引いた値。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
                   </div>
-                  <h5 class="updated-transition"><br /></h5>
-                  <div class="switches">
-                    <div class="switch" value="new">新規</div>
-                    <div class="switch selected" value="total">累計</div>
-                  </div>
-                  <div class="chart"></div>
-                  <p class="notes">症状の有無は問わない。日付は都道府県から厚生労働省への報告ベース。後から誤記を訂正したと思われるケースは遡及修正した（3/18-19の栃木県）。<a class="more">もっと読む</a></p>
-                </div>
               </div>
-              <div class="flex-row t03">
-                <div class="box prefecture-chart" code="deaths">
-                  <h3><span></span>の死亡者数</h3>
-                  <div class="latest">
-                    <div>
-                      <span class="type"></span>
-                      <span class="value"></span>
-                      <span class="unit"></span>
-                    </div>
-                    <div class="change"></div>
+              <div class="flex-row">
+                  <div class="box transition" code="deaths">
+                      <h3>死亡者数</h3>
+                      <div class="latest">
+                          <div>
+                              <span class="type"></span>
+                              <span class="value"></span>
+                              <span class="unit"></span>
+                          </div>
+                          <div class="change"></div>
+                      </div>
+                      <h5 class="updated-transition"><br /></h5>
+                      <div class="switches">
+                          <div class="switch selected" value="new">新規</div>
+                          <div class="switch" value="total">累計</div>
+                      </div>
+                      <div class="chart"></div>
+                      <p class="notes">厚生労働省の資料「入退院等の状況＞死亡者」の数。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
                   </div>
-                  <h5 class="updated-transition"><br /></h5>
-                  <div class="switches">
-                    <div class="switch" value="new">新規</div>
-                    <div class="switch selected" value="total">累計</div>
-                  </div>
-                  <div class="chart"></div>
-                  <p class="notes">日付は都道府県から厚生労働省への報告ベース。後から誤記を訂正したと思われるケースは遡及修正した（3/18-19の北海道、3/22-26の兵庫県、3/26の愛知県）。<a class="more">もっと読む</a></p>
-                </div>
               </div>
-              <div class="flex-row t03">
-                <div class="box prefecture-chart" code="pcrtested">
-                  <h3><span></span>のPCR検査人数</h3>
-                  <div class="latest">
-                    <div>
-                      <span class="type"></span>
-                      <span class="value"></span>
-                      <span class="unit"></span>
-                    </div>
-                    <div class="change"></div>
+              <div class="flex-row">
+                  <div class="box transition" code="pcrtested">
+                      <h3>PCR検査人数</h3>
+                      <div class="latest">
+                          <div>
+                              <span class="type"></span>
+                              <span class="value"></span>
+                              <span class="unit"></span>
+                          </div>
+                          <div class="change"></div>
+                      </div>
+                      <h5 class="updated-transition"><br /></h5>
+                      <div class="switches">
+                          <div class="switch selected" value="new">新規</div>
+                          <div class="switch" value="total">累計</div>
+                      </div>
+                      <div class="chart"></div>
+                      <p class="notes">厚生労働省の資料「PCR検査陽性者数＞PCR検査実施人数」の数。検査「件数」ではなく「人数」であるため、1名に複数回PCR検査を行った場合は「1名」とカウントする。厚生労働省では原則として過去分の遡及訂正は行っていないため、都道府県からの報告に訂正があった場合は大幅な増加やマイナスになる場合がある。当初はPCR検査人数として疑似症サーベイランス（疑わしい症状がある患者への調査）だけの数字が発表されていたが、3月4日からは濃厚接触者に対する検査も含むため、このページでは3月4日以降のデータのみ掲載している。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
                   </div>
-                  <h5 class="updated-transition"><br /></h5>
-                  <div class="switches">
-                    <div class="switch" value="new">新規</div>
-                    <div class="switch selected" value="total">累計</div>
-                  </div>
-                  <div class="chart"></div>
-                  <p class="notes">検査「件数」ではなく「人数」であるため、1名に複数回PCR検査を行った場合は「1名」とカウントする。厚生労働省では原則として過去分の遡及訂正は行っていないため、都道府県からの報告に訂正があった場合は大幅な増加やマイナスになる場合がある。未確定または未集計などでその日の数値が確定できない場合、前日と同じ数値としている。3/11の秋田県は秋田市のみの数値。3/16-22の愛知県は名古屋市を除く。千葉県は3/21、大阪府は3/22、神奈川県は3/23からのみ計上。それ以前はPCR検査「件数」だったことが判明したため0と扱っている。<a class="more">もっと読む</a></p>
-                </div>
               </div>
-            </div>
-        </div>
-      </div>
-      <div id="footer-block">
-        <p class="notes">武漢からの政府チャーター便帰国者、およびダイヤモンド・プリンセス号の乗客・乗員は除く。</p>
-        <p class="notes">データソース：<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html" target="_blank">厚生労働省の報道発表資料</a>。チャート描画：<a href="https://www.chartjs.org/" target="_blank">Chart.js</a>。マップ描画：<a href="https://github.com/takemaru-hirai/japan-map" target="_blank">Japan Map</a>。アイコン：<a href="https://material.io/resources/icons/" target="_blank">Material Design</a>。</p>
-        <p class="notes">更新履歴・ソースコード：<a href="https://github.com/kaz-ogiwara/covid19/" target="_blank">GitHub</a> | <a href="https://github.com/kaz-ogiwara/covid19/blob/master/data/individuals.csv" download="data.csv" target="_blank">CSVデータのダウンロード</a></p>
-        <div id="social-buttons">
-          <a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3a%2f%2ftoyokeizai%2enet%2fsp%2fvisual%2ftko%2fcovid19%2f" target="_blank"></a>
-          <a class="twitter"  href="https://twitter.com/share?url=https%3A%2F%2Ftoyokeizai.net%2Fsp%2Fvisual%2Ftko%2Fcovid19%2F&text=%E6%96%B0%E5%9E%8B%E3%82%B3%E3%83%AD%E3%83%8A%E3%82%A6%E3%82%A4%E3%83%AB%E3%82%B9%20%E5%9B%BD%E5%86%85%E6%84%9F%E6%9F%93%E3%81%AE%E7%8A%B6%E6%B3%81%20-%20%E6%9D%B1%E6%B4%8B%E7%B5%8C%E6%B8%88%E3%82%AA%E3%83%B3%E3%83%A9%E3%82%A4%E3%83%B3" target="_blank"></a>
-        </div>
-        <div id="faqs">
-          <h3>よくあるご質問</h3>
-          <section>
-            <h4>Q. PCR検査人数がマイナスになったり大きく増減しているのは何故ですか？</h4>
-            <p>A. 都道府県からの報告に訂正があった場合の調整を行っているためです。たとえば3月19日は千葉県、25日は大阪府がPCR検査「人数」ではなく「件数」を報告していたのを訂正したためマイナスになっています。また、それまで全国合計に含まれていなかった都道府県が新たに加わった場合は大きくプラスになります。こうしたケースは定義変更にあたるため過去分を遡って訂正することが一般的ですが、日次での発表を間に合わせるためそのまま発表していると思われます。</p>
-          </section>
-          <section>
-            <h4>Q. このページからPCR検査件数を見ることはできますか？</h4>
-            <p>A. できません。このページで表示しているのは（今のところ）検査「人数」だけです。PCR検査は1名に複数回検査を行うことがあります。その場合、検査人数は「1」とカウントされます。したがって多くの場合、数字は「検査人数＜検査件数」となります。</p>
-          </section>
-          <section>
-            <h4>Q. 感染者数と患者数の違いは何ですか？</h4>
-            <p>A. 「感染者」とは新型コロナウイルスに感染した人＝PCR検査で陽性が出た人を指します。そのうち症状がない人（＝無症状病原体保有者）を除き、実際に症状が出ている人を「患者」と呼びます。厚生労働省と同様の表記です。PCR検査は「判明した感染者の濃厚接触者」も対象としているため、こうした「症状がないけど実は感染していた」ケースがあり、感染者数と患者数がイコールになりません。</p>
-          </section>
-          <section>
-            <h4>Q. データが報道や自治体発表と異なるのは何故ですか？</h4>
-            <p>A. 個別のケースによりますが、厚生労働省の基準との違いによるものと思われます。厚生労働省では各自治体からの報告を受け、重複を除くなどして最終的に全国の集計をまとめています。その過程で、たとえば地域などの集計基準が異なる場合がありえます。もうひとつの可能性として「患者数」と「感染者数」が混同されているケースもありえます。</p>
-          </section>
-          <section>
-            <h4>Q. データソースにはどうやってアクセスできますか？</h4>
-            <p>A. たとえば3月9日12:00時点のデータはこちらを参照しています。厚生労働省 → 報道・広報 → 報道発表資料 → 3月 → 2020年3月9日（月）掲載「<a href="https://www.mhlw.go.jp/stf/newpage_10062.html" target="_blank">新型コロナウイルス感染症の現在の状況と厚生労働省の対応について（令和２年３月９日版）</a>」</p>
-          </section>
-          <section>
-            <h4>Q. データやソースコードを自分のSNSやブログで使ってもよいですか？</h4>
-            <p>A. 商用・非商用を問わずご自由にお使いください。具体的な基準はMITライセンスに準拠します。許可を取る必要はありませんが、事後報告でよいのでご連絡をいただくと「今後も続けていきましょう」と社内に言いやすいので助かります。</p>
-          </section>
-        </div>
-        <div id="related-links">
-          <h3>関連記事</h3>
-          <h4>画像をクリックすると特集記事一覧にジャンプします</h4>
-          <div class="links">
-            <div class="link">
-              <a href="https://toyokeizai.net/category/corona-virus" target="_blank"><img src="img/image-series-01.jpg" /></a>
-            </div>
-            <div class="link">
-              <a href="https://toyokeizai.net/category/corona-large-ripples" target="_blank"><img src="img/image-series-02.jpg" /></a>
-            </div>
+              <div class="flex-row">
+                  <div class="box transition" code="serious">
+                      <h3>重症者数</h3>
+                      <div class="latest">
+                          <div>
+                              <span class="type"></span>
+                              <span class="value"></span>
+                              <span class="unit"></span>
+                          </div>
+                          <div class="change"></div>
+                      </div>
+                      <h5 class="updated-transition"><br /></h5>
+                      <div class="switches">
+                          <div class="switch selected" value="new">新規</div>
+                          <div class="switch" value="total">累計</div>
+                      </div>
+                      <div class="chart"></div>
+                      <p class="notes">厚生労働省の資料「入退院等の状況＞入院治療を要する者＞うち人工呼吸器又は集中治療室に入院している者」の数。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
+                  </div>
+              </div>
+              <div class="flex-row">
+                  <div class="box transition" code="discharged">
+                      <h3>退院者数</h3>
+                      <div class="latest">
+                          <div>
+                              <span class="type"></span>
+                              <span class="value"></span>
+                              <span class="unit"></span>
+                          </div>
+                          <div class="change"></div>
+                      </div>
+                      <h5 class="updated-transition"><br /></h5>
+                      <div class="switches">
+                          <div class="switch selected" value="new">新規</div>
+                          <div class="switch" value="total">累計</div>
+                      </div>
+                      <div class="chart"></div>
+                      <p class="notes">厚生労働省の資料「入退院等の状況＞退院した者」の数。症状の有無は問わない。日付は都道府県から厚生労働省への報告ベース。<a class="more">もっと読む</a></p>
+                  </div>
+              </div>
+              <div class="flex-row">
+                  <div class="box" id="demography-box">
+                      <h3>年齢別の感染者数</h3>
+                      <h5 class="updated-demography"><br /></h5>
+                      <div id="demography-chart"></div>
+                      <p class="notes">「不明」には調査中や非公表も含む。厚生労働省の発表するデータ時点が異なるため、他のデータと合計数などが一致しない場合がありうる。</p>
+                  </div>
+              </div>
           </div>
-        </div>
-        <p><small lang="en">© 2020 Toyo Keizai Inc.</small></p>
-      </div>
+
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="js/jquery.japan-map.min.js"></script>
-    <script src="js/script.min.js"></script>
+    <!-- <script src="js/script.min.js"></script> -->
+    <script src="js/script.js"></script>
   </body>
 </html>
