@@ -7,8 +7,11 @@ from bs4 import BeautifulSoup
 import re
 
 parser = argparse.ArgumentParser(description='MHLW COVID Info Extractor.')
-parser.add_argument('-j', '--japan', help='Japanese domestic information')
-parser.add_argument('-w', '--world', help='World information')
+parser.add_argument('-i', '--input', help='Input URL')
+parser.add_argument('-n', '--num', type=int, help='Only a few lines for each table')
+parser.add_argument('-j', '--japan', action='store_true', help='Japanese domestic information')
+parser.add_argument('-w', '--world', action='store_true', help='World information')
+parser.add_argument('-v', '--verbose', action='store_true', help='Verbose')
 args = parser.parse_args()
 
 summary_page = 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html'
@@ -18,8 +21,9 @@ headers = {
 }
 
 res = requests.get(summary_page, headers = headers)
-# print(res.request.headers, file=sys.stderr)
-# print(res.status_code, file=sys.stderr)
+if args.verbose:
+    print(res.request.headers, file=sys.stderr)
+    print(res.status_code, file=sys.stderr)
 res.raise_for_status()
 
 soup = BeautifulSoup(res.content, "html5lib")
@@ -27,8 +31,8 @@ soup = BeautifulSoup(res.content, "html5lib")
 list = (soup
         .find_all("div", class_="m-grid__col1")[1]
         .find_all(href=re.compile(r"html$"), string=re.compile(r"^新型コロナ"))
+        # .find_parent("a")
 )
-#     .find_parent("a")
 
 def get_str(elem):
     if elem.string:
@@ -38,12 +42,20 @@ def get_str(elem):
 
 def print_table(t, date):
     rows = t.find_all("tr")
+    n_rows = len(rows)
+    # Do not print short notes, but only long tables
+    if n_rows <= 5:
+        return
     first_line_cols = rows[0].find_all("td")
     n_cols = len(first_line_cols)
-    print(n_cols, 'cols')
-    if n_cols >= 8: # only prefecture table and country table
+    # Only country table (2 or 3 cols) and prefecture table (5 cols)
+    if n_cols >= 8:
         return
-    for i in range(len(rows)):
+    print(n_cols, 'cols', 'x', n_rows, 'rows')
+    max = len(rows)
+    if args.num is not None:
+        max = args.num
+    for i in range(max):
         data = [date]
         cols = rows[i].find_all("td")
         for j in range(len(cols)):
@@ -57,16 +69,14 @@ def extract_table(url, date):
     soup = BeautifulSoup(res.content, "html5lib")
     tables = soup.find_all("tbody")
     for t in tables:
-        rows = t.find_all("tr")
-        size = len(rows)
-        if size > 5:            # print only tables, not notes
-            print(size, 'rows')
-            print_table(t, date)
-            
+        print_table(t, date)
 
-# extract_table('https://www.mhlw.go.jp/stf/newpage_09571.html', "date")
-# extract_table('https://www.mhlw.go.jp/stf/newpage_10636.html')
-# sys.exit()
+if args.input:
+    # url = args.input
+    # extract_table('https://www.mhlw.go.jp/stf/newpage_09571.html', "date")
+    # extract_table('https://www.mhlw.go.jp/stf/newpage_10636.html')
+    extract_table(args.input, "")
+    sys.exit()
 
 for item in list:
     date = re.findall('令和.*日', item.string)[0]
