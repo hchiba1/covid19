@@ -4,10 +4,11 @@ import requests
 from bs4 import BeautifulSoup
 
 class Extractor:
-    def __init__(self):
+    def __init__(self, args):
         self.headers = {
             "User-Agent": "MHLW-COVID-Info-Extractor/0.0.1",
         }
+        self.args = args
 
     def extract_list(self, verbose):
         summary_page = 'https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000121431_00086.html'
@@ -29,50 +30,64 @@ class Extractor:
         res.raise_for_status()
         
         soup = BeautifulSoup(res.content, "html5lib")
-        print(soup.find_all)
+        # print(soup.find_all)
 
         title = soup.find('title').string
         date = re.findall('\d+月\d+日', title)[0]
-        print(f'{date}')
-        head = soup.find_all("thead")
-        for h in head:
-            header = []
-            for th in h.find_all("th"):
-                header.append(th.text)
-            print('\t'.join(header))
 
-        tables = soup.find_all("tbody")
+        tables = soup.find_all("table")
         for t in tables:
-            self.print_table(t, num)
+            self.print_table(t, date, num)
 
-    def print_table(self, t, num):
-        rows = t.find_all("tr")
+    def print_table(self, t, date, num):
+        lines = []
+
+        head = t.find("thead")
+        if head:
+            header = []
+            for th in head.find_all("th"):
+                header.append(th.text.lstrip('　'))
+            lines.append('\t'.join(header))
+
+        rows = t.find("tbody").find_all("tr")
         n_rows = len(rows)
+        
         # Do not print short notes, but only long tables
         if n_rows <= 5:
             return
         first_line_cols = rows[0].find_all("td")
         n_cols = len(first_line_cols)
+        
         # Only country table (2 or 3 cols) and prefecture table (5 cols)
         if n_cols >= 8:
             return
+
         # print(n_cols, 'cols', 'x', n_rows, 'rows')
-        # print(first_line_cols[0].text)
+        
         max = len(rows)
         if num is not None:
             max = num
         for i in range(max):
-            data = []
+            data = [date]
             cols = rows[i].find_all("td")
             for j in range(len(cols)):
                 data.append(self.get_str(cols[j]))
-            print('\t'.join(data), flush=True)
+            lines.append('\t'.join(data))
+        
+        if self.args.world and lines[0][0] == "都":
+            return
+        if self.args.japan and lines[0][0] == "国":
+            return
+
+        # print(f'{date}')
+        print('\n'.join(lines), flush=True)
+
 
     def get_str(self, elem):
         # if elem.string:
         #     return(elem.string)
         # else:
-        return(re.sub('\n\s*', '', elem.text))
+        return(re.sub('\n\s*', '', elem.text.strip()))
 
 
 

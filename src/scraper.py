@@ -12,7 +12,7 @@ parser.add_argument('-w', '--world', action='store_true', help='World informatio
 parser.add_argument('-v', '--verbose', action='store_true', help='Verbose')
 args = parser.parse_args()
 
-ex = Extractor()
+ex = Extractor(args)
 
 if args.input:
     ex.extract_table(args.input, args.num)
